@@ -1,0 +1,59 @@
+.portfolio {
+    &__filter {
+        display: flex;
+        max-width: 1000px;
+        width: 60%;
+        flex-wrap: wrap;
+        margin: auto;
+        margin-bottom: 60px;
+        justify-content: center;
+        &-item {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    }
+    &__grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 240px;
+        margin-bottom: 100px;
+        gap: 30px;
+        &__item {
+            position: relative;
+            cursor: pointer;
+            border-radius: 20px;
+            &-img {
+                width: 100%;
+                border-radius: 4px;
+                height: 100%;
+            }
+            &__detail {
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 4px;
+                flex-direction: column;
+                background-color: rgba($color: $green, $alpha: 0.6);
+                opacity: 0;
+                transition: 800ms;
+                &:hover {
+                    transition: 800ms;
+                    opacity: 1;
+                }
+            }
+        }
+        @media only screen and (max-width: 1000px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media only screen and (max-width: 450px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}

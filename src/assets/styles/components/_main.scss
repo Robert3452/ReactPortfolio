@@ -1,0 +1,41 @@
+.masterhead {
+    color: white;
+    background-image: linear-gradient(rgba(#000, 0.4), rgba(#000, 0.4)), url("../static/1.jpg");
+    height: 100vh;
+    min-height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        min-height: 100%;
+        & .avatar {
+            margin-bottom: 20px;
+            & img {
+                z-index: 5;
+                border-radius: 100%;
+                border: 5px white solid;
+                object-fit: cover;
+                max-width: 120px;
+            }
+        }
+        & .presentation {
+            margin-bottom: 25px;
+            text-transform: capitalize;
+            color: white;
+            font-size: 35px;
+            @media only screen and (max-width: 768px) {
+                font-size: 28px;
+            }
+        }
+        & .profession {
+            text-transform: capitalize;
+
+            font-size: 20px;
+        }
+    }
+}

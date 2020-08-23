@@ -1,0 +1,94 @@
+.header {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    z-index: 99;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+.fixed-nav {
+    transition: 0.3s;
+    background-color: rgba(#000, 0.7);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__left {
+        text-align: center;
+        & a {
+            font-size: 30px;
+            font-weight: bolder;
+        }
+    }
+    &__right {
+        &.toggle {
+            height: 250px;
+            transition: 0.3s;
+            & a {
+                font-size: 12px;
+                display: none;
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            height: 0;
+            top: 100%;
+            transition: 0.3s;
+            z-index: -1;
+            left: 0;
+            right: 0;
+            background-color: rgba(#000, 0.7);
+            transition: 0.3s;
+            & a {
+                font-size: 0;
+                display: none;
+                transition: none !important;
+            }
+            &.toggle a {
+                font-size: 14px;
+                transition: none;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    &-item {
+        & a {
+            display: inline-block;
+            padding: 0 20px;
+            font-weight: 700;
+            transition: 500ms;
+            text-transform: capitalize;
+            &:hover {
+                transition: 500ms;
+                color: $green !important;
+            }
+            @media only screen and (max-width: 768px) {
+                padding: 20px;
+            }
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        & {
+            flex-direction: column;
+            &-item {
+                & a {
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}
