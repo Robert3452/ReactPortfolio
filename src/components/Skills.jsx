@@ -1,20 +1,36 @@
 import React from 'react';
+import PreDesc from './childrens/PreDesc';
 
-const Skills = ({ preDesc, children }) => {
+import SkillItem from './childrens/SkillItem';
+import { fetchSkills } from '../actions';
+
+import { connect } from 'react-redux';
+
+
+const Skills = (props) => {
+    const { preDesc, skills } = props;
+
     return (
         <section id="skills" className="container">
-            <div className="content">
-                <h3 className="content-title">{preDesc?.title}</h3>
-                <p className="content-description">
-                    {preDesc?.content}
-                </p>
-            </div>
+            {preDesc && (<PreDesc {...preDesc[0]} />)}
             <div className="skills-grid">
-                {children}
-
+                {skills && skills.map((skill) => (
+                    <SkillItem key={skill._id} {...skill} />
+                ))}
             </div>
-        </section>
-    )
+        </section>)
 }
 
-export default Skills;
+const mapDispatchToProps = {
+    fetchSkills,
+};
+
+const mapStateToProps = (state) => {
+    return {
+        skills: state.skills.data,
+        preDesc: state.preDesc.data,
+
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Skills);

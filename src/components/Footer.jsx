@@ -1,22 +1,23 @@
 import React from 'react';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Footer = () => {
     return (
         <footer>
             <div className="footer container">
                 <div className="social">
-                    <a href="#" className="social-item">
-                        <i className="fab fa-facebook"></i>
+                    <a  target="_blank" href="https://www.facebook.com/robert.mezagarcia" className="social-item">
+                        <FontAwesomeIcon icon={["fab", "facebook"]} />
                     </a>
-                    <a href="#" className="social-item">
-                        <i className="fab fa-twitter"></i>
+                    <a  target="_blank" href="https://twitter.com/romeza1239" className="social-item">
+                        <FontAwesomeIcon icon={["fab", "twitter"]} />
                     </a>
-                    <a href="#" className="social-item">
+                    <a  target="_blank" href="https://www.instagram.com/rojarodmeza/" className="social-item">
                         <i className="fab fa-instagram"></i>
+                        <FontAwesomeIcon icon={["fab", "instagram"]} />
                     </a>
-                    <a href="#" className="social-item">
-                        <i className="fab fa-linkedin"></i>
+                    <a target="_blank"  href="https://www.linkedin.com/in/robert-jarod-meza-garcia-3b1128175/" className="social-item">
+                        <FontAwesomeIcon icon={["fab", "linkedin"]} />
                     </a>
                 </div>
                 <hr />

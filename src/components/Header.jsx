@@ -1,7 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import Navigation from '../hooks/navigationHook';
 const Header = ({ names, lastnames }) => {
+    Navigation();
+
     return (
         <section className="header" >
             <nav className="navbar container">

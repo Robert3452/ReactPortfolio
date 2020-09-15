@@ -1,20 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import Work from './childrens/PortfolioItem'
+import PreDesc from './childrens/PreDesc';
 
-
-const Portfolio = () => {
+const Portfolio = (props) => {
+    const { preDesc, works } = props;
     return (
         <section id="portfolio" className="portfolio">
             <div className="container">
-                <div className="content">
-                    <h3 className="content-title">
-                        I love what I do
-                </h3>
-                    <div className="content-description">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas numquam necessitatibus in nulla eius
-                        deleniti voluptas sit aspernatur suscipit corrupti. Quibusdam ratione accusamus nesciunt ipsam quos
-                        minus corrupti quisquam quo?
-                </div>
-                </div>
+                {preDesc && <PreDesc {...preDesc[2]} />}
+                {/* make category service */}
                 <div className="portfolio__filter">
                     <div className="portfolio__filter-item">
                         <button type="button" className="btn"> All projects </button>
@@ -34,62 +29,7 @@ const Portfolio = () => {
                 </div>
 
                 <div className="portfolio__grid">
-                    <div className="portfolio__grid__item">
-                        <img className="portfolio__grid__item-img" src="./assets/img/g1.jpg" alt="" />
-                        <div className="portfolio__grid__item__detail">
-                            <h4 className="portfolio__grid__item__detail-title">First Project</h4>
-                            <span className="portfolio__grid__item__detail-content">Lorem ipsum dolor sit.</span>
-                        </div>
-                    </div>
-                    <div className="portfolio__grid__item">
-                        <img className="portfolio__grid__item-img" src="./assets/img/g2.jpg" alt="" />
-                        <div className="portfolio__grid__item__detail">
-                            <h4 className="portfolio__grid__item__detail-title">First Project</h4>
-                            <span className="portfolio__grid__item__detail-content">Lorem ipsum dolor sit.</span>
-                        </div>
-                    </div>
-                    <div className="portfolio__grid__item">
-                        <img className="portfolio__grid__item-img" src="./assets/img/g3.jpg" alt="" />
-                        <div className="portfolio__grid__item__detail">
-                            <h4 className="portfolio__grid__item__detail-title">First Project</h4>
-                            <span className="portfolio__grid__item__detail-content">Lorem ipsum dolor sit.</span>
-                        </div>
-                    </div>
-                    <div className="portfolio__grid__item">
-                        <img className="portfolio__grid__item-img" src="./assets/img/g4.jpg" alt="" />
-                        <div className="portfolio__grid__item__detail">
-                            <h4 className="portfolio__grid__item__detail-title">First Project</h4>
-                            <span className="portfolio__grid__item__detail-content">Lorem ipsum dolor sit.</span>
-                        </div>
-                    </div>
-                    <div className="portfolio__grid__item">
-                        <img className="portfolio__grid__item-img" src="./assets/img/g5.jpg" alt="" />
-                        <div className="portfolio__grid__item__detail">
-                            <h4 className="portfolio__grid__item__detail-title">First Project</h4>
-                            <span className="portfolio__grid__item__detail-content">Lorem ipsum dolor sit.</span>
-                        </div>
-                    </div>
-                    <div className="portfolio__grid__item">
-                        <img className="portfolio__grid__item-img" src="./assets/img/g6.jpg" alt="" />
-                        <div className="portfolio__grid__item__detail">
-                            <h4 className="portfolio__grid__item__detail-title">First Project</h4>
-                            <span className="portfolio__grid__item__detail-content">Lorem ipsum dolor sit.</span>
-                        </div>
-                    </div>
-                    <div className="portfolio__grid__item">
-                        <img className="portfolio__grid__item-img" src="./assets/img/g7.jpg" alt="" />
-                        <div className="portfolio__grid__item__detail">
-                            <h4 className="portfolio__grid__item__detail-title">First Project</h4>
-                            <span className="portfolio__grid__item__detail-content">Lorem ipsum dolor sit.</span>
-                        </div>
-                    </div>
-                    <div className="portfolio__grid__item">
-                        <img className="portfolio__grid__item-img" src="./assets/img/g8.jpg" alt="" />
-                        <div className="portfolio__grid__item__detail">
-                            <h4 className="portfolio__grid__item__detail-title">First Project</h4>
-                            <span className="portfolio__grid__item__detail-content">Lorem ipsum dolor sit.</span>
-                        </div>
-                    </div>
+                    {works && works.map(work => (<Work key={work._id} {...work} />))}
                 </div>
             </div>
         </section>
@@ -97,4 +37,11 @@ const Portfolio = () => {
     )
 }
 
-export default Portfolio;
+const mapStateToProps = (state) => {
+    return {
+        works: state.works.data,
+        preDesc: state.preDesc.data
+    }
+}
+
+export default connect(mapStateToProps)(Portfolio);

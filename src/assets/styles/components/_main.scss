@@ -31,11 +31,17 @@
             @media only screen and (max-width: 768px) {
                 font-size: 28px;
             }
+            & h1{
+                color: white;
+            }
         }
         & .profession {
             text-transform: capitalize;
 
             font-size: 20px;
+            & h3{
+                color: white;
+            }
         }
     }
 }
