@@ -1,4 +1,4 @@
-const uri = process.env.BASE_URL;
+const uri = process.env.BASE_URL || "https://portfolio-robert.herokuapp.com";
 
 
 const API_URLS = {
