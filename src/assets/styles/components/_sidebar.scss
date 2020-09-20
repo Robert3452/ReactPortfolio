@@ -15,6 +15,7 @@
 .sidebar {
     height: 100vh;
     margin-top: 60px;
+    z-index: 9999;
     width: 260px;
     transform: translateX(-101%);
     position: fixed;
@@ -36,6 +37,7 @@
         min-height: 100vh;
         background-color: #26292e;
         padding-top: 90px;
+        padding-bottom: 40px;
         transition: 0.3s;
         &-container {
             width: 95%;
@@ -43,9 +45,12 @@
         }
         &-title {
             font-size: 25px;
+            margin-bottom: 5px;
         }
 
         &-date {
+            margin-bottom: 5px;
+            text-transform: capitalize;
             & span {
                 color: $blue;
             }
@@ -139,18 +144,17 @@
         display: flex;
         flex-wrap: wrap;
         &-left {
-            // min-width: 100px;
-            width: 50%;
+            width: 65%;
             &-title {
-                font-size: 15px;
+                font-size: 18px;
+                margin-bottom: 10px;
             }
         }
         &-right {
             display: flex;
             justify-content: center;
             height: 100%;
-            width: 50%;
-            // max-width: 198px;
+            width: 35%;
             & img {
                 object-fit: contain;
                 max-width: 100%;
@@ -169,10 +173,6 @@
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        // &-left {
-        // }
-        // &right {
-        // }
         .icon {
             font-size: 20px;
             color: $blue;

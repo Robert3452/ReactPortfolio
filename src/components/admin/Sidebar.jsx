@@ -1,41 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+
+import routes from '../../config/routes';
 
 const Sidebar = () => {
+    const adminRoutes = routes[0].routes;
     return (
         <nav className="sidebar toggle ">
             <div className="sidebar-container">
                 <h4 className="sidebar_title">Dashboard</h4>
                 <div className="list">
-                    <a href="#">
-                        <div className="list_item">
-                            Access
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div className="list_item">
-                            Profile
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div className="list_item">
-                            Skills
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div className="list_item">
-                            Claims
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div className="list_item">
-                            Portfolio
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div className="list_item">
-                            Timeline
-                        </div>
-                    </a>
+                    {adminRoutes.map((route, index) => (
+                        <Link to={route.path} key={index} >
+                            <div className="list_item">
+                                {route.name}
+                            </div>
+                        </Link>
+                    ))}
                 </div>
                 <h4 className="sidebar_title">Chat </h4>
                 <div className="list">

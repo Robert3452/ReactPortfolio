@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import me from '../../assets/static/Me.jpg';
 import dashboard from '../../assets/static/dashboard.svg';
@@ -16,15 +17,15 @@ const AdminHeader = () => {
                             <FontAwesomeIcon icon={["fas", "bars"]} size="lg" />
                         </div>
                     </div>
-                    <a href="/" className="navbar__left-title-small">Dashboard</a>
+                    <Link to="/" className="navbar__left-title-small">Dashboard</Link>
                 </div>
                 <div className="navbar__right_admin">
                     <ul className="menu-admin">
                         <li className="navbar__right_admin-item">
-                            <a href=""><img className="icon_menu" src={dashboard} /></a>
+                            <Link to=""><img className="icon_menu" src={dashboard} /></Link>
                         </li>
                         <li className="navbar__right_admin">
-                            <a href=""><img className="mini__avatar" src={me} /></a>
+                            <Link to=""><img className="mini__avatar" src={me} /></Link>
                         </li>
                     </ul>
 

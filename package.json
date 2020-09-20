@@ -5,8 +5,8 @@
   "homepage": "http://Robert3452.github.io/ReactPortfolio",
   "main": "index.js",
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d dist",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --open --mode development"
   },
@@ -21,6 +21,7 @@
     "axios": "^0.20.0",
     "dotenv": "^8.2.0",
     "gh-pages": "^3.1.0",
+    "moment": "^2.28.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
