@@ -9,7 +9,7 @@ import thunk from 'redux-thunk';
 import reducer from './reducer';
 
 const initialState = { user: {}, preDesc: {}, skills: {}, claims: {}, about: {}, works: {}, hitos: {} };
-const composeEnhacers = compose;
+const composeEnhacers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(reducer, initialState, composeEnhacers(applyMiddleware(thunk)));
 

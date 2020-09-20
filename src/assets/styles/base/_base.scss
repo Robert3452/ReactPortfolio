@@ -5,19 +5,22 @@
     padding: 0;
 }
 html {
-    font-size: 14px;
-    font-family: "Nunito", sans-serif;
     scroll-behavior: smooth;
 }
-button {
-    outline: none;
+body {
+    font-size: 14px;
+
+    font-family: "Nunito", sans-serif;
 }
 
+textarea{
+    resize: none;
+}
 a,
 a:active,
 a:link {
     text-decoration: none;
-    color: white!important;
+    color: white;
 }
 
 ul {
